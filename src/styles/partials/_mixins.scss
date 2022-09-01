@@ -1,7 +1,6 @@
 // CONVERT PX TO REM
 @function toRem($size) {
-  $result: calc($size/16);
-  @return #{$result}rem;
+  @return #{$size}px;
 }
 
 /* ===========================
