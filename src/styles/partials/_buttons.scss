@@ -1,0 +1,101 @@
+a {
+  text-decoration: none;
+  transition: all 0.6s ease-in-out;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+
+  &:focus {
+    .no-touch & {
+      outline: none;
+    }
+  }
+}
+
+a:link,
+button {
+  -webkit-tap-highlight-color: rgba($brand-primary, 0.35);
+  -moz-tap-highlight-color: rgba($brand-primary, 0.35);
+}
+
+button {
+  outline: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+  @include transition(0.6s);
+
+  &:focus,
+  &:visited {
+    outline: none;
+  }
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  user-select: none;
+  pointer-events: none;
+  background: darken($brand-primary, 4%) !important;
+}
+
+.btn {
+  position: relative;
+  border-radius: toRem(3);
+  padding: toRem(14) toRem(26);
+  letter-spacing: 0.05em;
+  font-weight: 300 !important;
+  background-color: transparent;
+  color: $brand-white;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  max-width: 100%;
+  box-shadow: toRem(0) toRem(0) toRem(0) transparent;
+  text-decoration: none !important;
+  white-space: nowrap;
+  font-size: toRem(13.5);
+  @include flex-row-center-nowrap;
+  @include transition(0.6s);
+
+  @include breakpoint-down(md) {
+    font-size: toRem(11.25);
+  }
+
+  @include breakpoint-down(sm) {
+    @include font-height(12.25, 15);
+    padding: toRem(13.75) toRem(28);
+  }
+
+  @include breakpoint-down(xs) {
+    @include font-height(12, 14);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none !important;
+    box-shadow: toRem(1) toRem(3) toRem(6) 0 rgba($brand-black, 0.4);
+
+    .no-touch & {
+      outline: none;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $brand-primary !important;
+  color: $brand-white !important;
+
+  &:hover,
+  &:focus {
+    background-color: darken($brand-primary, 4%) !important;
+  }
+}

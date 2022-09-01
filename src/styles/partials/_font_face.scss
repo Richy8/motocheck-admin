@@ -1,0 +1,56 @@
+/* Sofia Pro Light */
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Sofia-Pro-Light-Az.otf");
+  src: local(""), url("../fonts/Sofia-Pro-Light-Az.woff") format("woff");
+}
+
+/* Sofia Pro Regular */
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Sofia-Pro-Regular-Az.otf");
+  src: local(""), url("../fonts/Sofia-Pro-Regular-Az.woff") format("woff");
+}
+
+/* Sofia Pro Medium */
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Sofia-Pro-Medium-Az.otf");
+  src: local(""), url("../fonts/Sofia-Pro-Medium-Az.woff") format("woff");
+}
+
+/* Sofia Pro SemiBold */
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Sofia-Pro-Semi-Bold-Az.otf");
+  src: local(""), url("../fonts/Sofia-Pro-Semi-Bold-Az.woff") format("woff");
+}
+
+/* Sofia Pro Bold */
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Sofia-Pro-Bold-Az.otf");
+  src: local(""), url("../fonts/Sofia-Pro-Bold-Az.woff") format("woff");
+}
+
+$body_font: "Sofia Pro", Roboto, Segoe UI, Open Sans, sans-serif;
+
+body {
+  font-family: $body_font;
+  font-display: swap;
+}

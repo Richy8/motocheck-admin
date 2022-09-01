@@ -1,0 +1,60 @@
+// APP BASE COLORS
+$brand-primary: #53bed2;
+$brand-dark-grey: #555555;
+$brand-light-grey: #5d6c76;
+$brand-lighter-grey: #e7edf7;
+$brand-ash: #999999;
+$brand-light-ash: #ecf0f7;
+$brand-lighter-ash: #f5f3fa;
+$brand-white: #ffffff;
+$brand-black: #000000;
+$brand-text: #080511;
+$brand-orange: #ffbb82;
+$brand-light-orange: #ffe6d1;
+$brand-pale: #b9d3d3;
+$brand-light-pale: #dbecf5;
+$brand-red: #f5bec8;
+$brand-light-red: #ffe3e0;
+$brand-green: #21ba30;
+
+// App Color Pallete
+$app-color: () !default;
+$app-color: map-merge(
+  (
+    "brand-primary": $brand-primary,
+    "brand-dark-grey": $brand-dark-grey,
+    "brand-light-grey": $brand-light-grey,
+    "brand-lighter-grey": $brand-lighter-grey,
+    "brand-ash": $brand-ash,
+    "brand-light-ash": $brand-light-ash,
+    "brand-lighter-ash": $brand-lighter-ash,
+    "brand-white": $brand-white,
+    "brand-black": $brand-black,
+    "brand-text": $brand-text,
+    "brand-orange": $brand-orange,
+    "brand-light-orange": $brand-light-orange,
+    "brand-pale": $brand-pale,
+    "brand-light-pale": $brand-light-pale,
+    "brand-red": $brand-red,
+    "brand-light-red": $brand-light-red,
+    "brand-green": $brand-green,
+  ),
+  $app-color
+);
+
+/*------------------------------------*\
+	App Color Palette
+\*------------------------------------*/
+@each $color-name, $color in $app-color {
+  .#{$color-name} {
+    color: $color !important;
+  }
+
+  .#{$color-name}-bg {
+    background-color: $color !important;
+  }
+
+  .border-#{$color-name} {
+    border: 1px solid $color !important;
+  }
+}

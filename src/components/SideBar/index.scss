@@ -1,0 +1,59 @@
+@import "styles/variables.scss";
+
+.sidebar-build-cover {
+  @include fixed-display-area;
+  padding: 12.5px;
+  width: 20%;
+
+  @include breakpoint-down(lg) {
+    width: 22%;
+  }
+
+  @include breakpoint-down(md) {
+    left: -100%;
+    z-index: 9999;
+    width: 0;
+    @include transition(0.4s);
+    // background: rgba($color-green, 0.3);
+  }
+
+  .sidebar-build {
+    box-shadow: 0px 1px 3px rgba($brand-dark-grey, 0.04);
+    @include flex-column-start-start;
+    border: 1px solid #eaedf3;
+    background: $brand-white;
+    @include stretch-area;
+    border-radius: 10px;
+    padding: 20px;
+
+    @include breakpoint-down(md) {
+      width: 50%;
+    }
+
+    @include breakpoint-down(sm) {
+      width: 60%;
+    }
+
+    @include breakpoint-down(xs) {
+      width: 80%;
+    }
+
+    .brand-row {
+      width: 100%;
+
+      .wrapper {
+        padding: 10px 0 30px;
+        border-bottom: 1px solid #e0e2e7;
+        margin-bottom: 28px;
+      }
+    }
+  }
+}
+
+.toggle-sidebar {
+  @include breakpoint-down(md) {
+    display: unset;
+    width: 100%;
+    left: 0;
+  }
+}

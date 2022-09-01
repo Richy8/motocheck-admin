@@ -1,0 +1,92 @@
+@import "styles/variables.scss";
+
+.dashboard-area {
+  .title-text {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-left: 3px;
+  }
+
+  .overview-area {
+    @include flex-row-start-nowrap;
+    border: 1px solid #e5e8ed;
+    margin-bottom: 35px;
+    border-radius: 6px;
+    padding: 35px 4px;
+    width: max-content;
+
+    .overview-card {
+      position: relative;
+      padding: 10px 32px;
+      width: 252px;
+
+      &:nth-of-type(2) {
+        border-left: 1px solid $brand-lighter-grey;
+        border-right: 1px solid $brand-lighter-grey;
+      }
+
+      .title-row {
+        @include flex-row-start-nowrap;
+
+        .text {
+          color: $brand-black;
+          line-height: 30px;
+          font-weight: 700;
+          font-size: 18px;
+          margin-right: 17px;
+        }
+
+        .indicator {
+          @include flex-row-start-nowrap;
+          position: relative;
+          top: -3px;
+
+          .icon {
+            margin-right: 5px;
+            font-size: 13px;
+          }
+
+          .indicator-text {
+            font-size: 12.5px;
+          }
+        }
+      }
+
+      .meta {
+        line-height: 26px;
+        color: $brand-light-grey;
+        font-size: 14.75px;
+      }
+
+      .backdrop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .key-actions-area {
+    @include flex-row-between-nowrap;
+    margin-bottom: 35px;
+  }
+
+  .load-more {
+    @include transition(0.35s);
+    border: 1px solid $brand-primary;
+    border-radius: 5px;
+    width: max-content;
+    padding: 15px 50px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    margin: auto;
+
+    &:hover {
+      background: $brand-primary;
+      color: $brand-white !important;
+    }
+  }
+}

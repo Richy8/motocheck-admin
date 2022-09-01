@@ -1,0 +1,92 @@
+.table-wrapper {
+  padding: 20px 10px 0;
+  overflow: auto;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    height: toRem(5);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: toRem(5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: toRem(5);
+    background: $brand-light-grey;
+  }
+
+  @include breakpoint-down(lg) {
+    padding: 0 toRem(17) toRem(30);
+  }
+
+  @include breakpoint-down(sm) {
+    padding: 0 toRem(12) toRem(26);
+  }
+}
+
+.table {
+  font-size: 13.75px;
+  line-height: 18px;
+  border-spacing: toRem(10);
+  color: $brand-black;
+  overflow: auto;
+  width: 100%;
+
+  thead {
+    font-weight: 600;
+  }
+
+  tbody {
+    border-top: 0 !important;
+  }
+
+  tr {
+    border: none;
+    border-bottom: 1px solid #e5e8ed;
+  }
+
+  th {
+    padding: 15px 13px;
+  }
+
+  td {
+    padding: 10px 13px;
+
+    &:first-of-type {
+      padding: 10px 0;
+    }
+  }
+}
+
+.col-one {
+  width: 35%;
+
+  .wrapper {
+    @include flex-row-start-nowrap;
+
+    .avatar {
+      background: $brand-lighter-grey;
+      position: relative;
+      margin-right: 10px;
+      min-width: 32px;
+      min-height: 32px;
+      width: 32px;
+      height: 32px;
+
+      .text {
+        @include center-placement;
+        color: $brand-black;
+        font-size: 11.5px;
+      }
+    }
+  }
+}
+
+.col-two {
+  width: 30%;
+}
+
+.col-three {
+  width: 35%;
+}

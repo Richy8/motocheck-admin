@@ -1,0 +1,36 @@
+@import "styles/variables.scss";
+
+%highlighted {
+  background: rgba($brand-primary, 0.15);
+  color: darken($brand-primary, 3%) !important;
+}
+
+.sidebar-item {
+  @include flex-row-start-nowrap;
+  @include transition(0.4s);
+  color: $brand-light-grey;
+  border-radius: 5px;
+  padding: 16px 15px;
+  margin-bottom: 4px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &-active,
+  &:hover {
+    @extend %highlighted;
+  }
+
+  .icon {
+    position: relative;
+    margin-right: 16px;
+    font-size: 17.75px;
+    top: -2px;
+  }
+
+  .text {
+    font-size: 14.5px;
+    line-height: 14px;
+  }
+}
