@@ -27,46 +27,48 @@ const index = () => {
       <div className="title-text brand-ash">Overview</div>
 
       {/* OVERVIEW AREA */}
-      <div className="overview-area brand-white-bg">
-        {/* OVERVIEW CARD */}
-        <div className="overview-card">
-          <div className="title-row">
-            <div className="text">228</div>
+      <div className="wrapper-row">
+        <div className="overview-area brand-white-bg">
+          {/* OVERVIEW CARD */}
+          <div className="overview-card">
+            <div className="title-row">
+              <div className="text">228</div>
 
-            <div className="indicator">
-              <div className="icon icon-triangle brand-green"></div>
-              <div className="indicator-text brand-ash">+3</div>
+              <div className="indicator">
+                <div className="icon icon-triangle brand-green"></div>
+                <div className="indicator-text brand-ash">+3</div>
+              </div>
             </div>
+
+            <div className="meta">Autocenters</div>
+
+            {/* BACKDROP */}
+            <img src={backdropChart} alt="chart" className="backdrop" />
           </div>
 
-          <div className="meta">Autocenters</div>
+          {/* OVERVIEW CARD */}
+          <div className="overview-card">
+            <div className="title-row">
+              <div className="text">44</div>
+            </div>
 
-          {/* BACKDROP */}
-          <img src={backdropChart} alt="chart" className="backdrop" />
-        </div>
+            <div className="meta">Forms Created</div>
 
-        {/* OVERVIEW CARD */}
-        <div className="overview-card">
-          <div className="title-row">
-            <div className="text">44</div>
+            {/* BACKDROP */}
+            <img src={backdropChart} alt="chart" className="backdrop" />
           </div>
 
-          <div className="meta">Forms Created</div>
+          {/* OVERVIEW CARD */}
+          <div className="overview-card">
+            <div className="title-row">
+              <div className="text">QWG3O32K</div>
+            </div>
 
-          {/* BACKDROP */}
-          <img src={backdropChart} alt="chart" className="backdrop" />
-        </div>
+            <div className="meta">Organization Key</div>
 
-        {/* OVERVIEW CARD */}
-        <div className="overview-card">
-          <div className="title-row">
-            <div className="text">QWG3O32K</div>
+            {/* BACKDROP */}
+            <img src={backdropChart} alt="chart" className="backdrop" />
           </div>
-
-          <div className="meta">Organization Key</div>
-
-          {/* BACKDROP */}
-          <img src={backdropChart} alt="chart" className="backdrop" />
         </div>
       </div>
 

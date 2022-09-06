@@ -4,7 +4,11 @@ import { SideBar, TopBar } from "components";
 
 import "./index.scss";
 
-function index() {
+function Index() {
+  React.useLayoutEffect(() => {
+    document.body.style.backgroundColor = "#f5f3fa";
+  }, []);
+
   return (
     <div className="base-layout">
       {/* SIDEBAR BUILD */}
@@ -22,4 +26,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

@@ -1,21 +1,126 @@
 @import "styles/variables.scss";
 
-.topbar-build {
-  box-shadow: 0px 1px 3px rgba($brand-dark-grey, 0.04);
-  @include flex-row-between-nowrap;
-  border: 1px solid #eaedf3;
-  background: $brand-white;
-  border-radius: 10px;
-  padding: 16px 24px;
-  margin-bottom: 18px;
+.top-wrapper {
+  position: fixed;
+  top: 0;
+  width: 79.1%;
+  z-index: 99;
+  padding-top: toRem(12.5);
+  background-color: $brand-lighter-ash;
 
-  .page-title {
-    position: relative;
-    top: 3px;
-    font-size: 15.5px;
-    font-weight: 600;
+  @include breakpoint-down(lg) {
+    width: 75.1%;
   }
 
-  .user-avatar {
+  @include breakpoint-down(md) {
+    width: 96.75%;
+  }
+
+  @include breakpoint-down(sm) {
+    width: 96.5%;
+  }
+
+  @include breakpoint-down(xs) {
+    width: 95%;
+  }
+
+  .topbar-build {
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba($brand-dark-grey, 0.04);
+    @include flex-row-between-nowrap;
+    border: 1px solid #eaedf3;
+    background: $brand-white;
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin-bottom: toRem(2);
+
+    @include breakpoint-down(lg) {
+      padding: 13px 18px;
+    }
+
+    @include breakpoint-down(md) {
+      padding: 13px 12px;
+    }
+
+    .left-section {
+      @include flex-row-start-nowrap;
+
+      .menu-icon {
+        position: relative;
+        @include rectangle-shape(30, 22);
+        margin-right: toRem(15);
+
+        @include breakpoint-down(xs) {
+          @include rectangle-shape(28, 20);
+          margin-right: toRem(10);
+        }
+
+        .line {
+          background: $brand-dark-grey;
+          position: absolute;
+          height: toRem(2);
+          width: 100%;
+
+          &-one {
+            width: 55%;
+            top: 0;
+          }
+
+          &-two {
+            transform: translateY(-50%);
+            top: 50%;
+          }
+
+          &-three {
+            width: 75%;
+            bottom: 0;
+          }
+        }
+      }
+
+      .page-title {
+        position: relative;
+        top: 3px;
+        font-size: 15.5px;
+        font-weight: 600;
+
+        @include breakpoint-down(lg) {
+          font-size: 14.5px;
+        }
+      }
+    }
+
+    .avatar-wrapper {
+      @include flex-row-end-nowrap;
+      width: max-content;
+
+      .user-avatar {
+        @include square-shape(36);
+        position: relative;
+        border-radius: 50%;
+        margin-right: 9px;
+
+        @include breakpoint-down(lg) {
+          @include square-shape(34);
+        }
+
+        @include breakpoint-down(md) {
+          @include square-shape(32);
+        }
+
+        img {
+          @include background-cover;
+        }
+      }
+
+      .icon {
+        color: $brand-text;
+        font-size: toRem(13.5);
+
+        @include breakpoint-down(md) {
+          font-size: toRem(12.75);
+        }
+      }
+    }
   }
 }

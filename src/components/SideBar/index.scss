@@ -6,15 +6,15 @@
   width: 20%;
 
   @include breakpoint-down(lg) {
-    width: 22%;
+    width: 23.5%;
   }
 
   @include breakpoint-down(md) {
+    @include transition(0.45s);
     left: -100%;
     z-index: 9999;
+    padding: 10px;
     width: 0;
-    @include transition(0.4s);
-    // background: rgba($color-green, 0.3);
   }
 
   .sidebar-build {
@@ -25,6 +25,10 @@
     @include stretch-area;
     border-radius: 10px;
     padding: 20px;
+
+    @include breakpoint-down(lg) {
+      padding: 16px;
+    }
 
     @include breakpoint-down(md) {
       width: 50%;
@@ -45,6 +49,19 @@
         padding: 10px 0 30px;
         border-bottom: 1px solid #e0e2e7;
         margin-bottom: 28px;
+
+        @include breakpoint-down(lg) {
+          padding: 10px 0 26px;
+          @include flex-row-center-nowrap;
+          margin-bottom: 26px;
+        }
+
+        img {
+          @include breakpoint-down(lg) {
+            width: toRem(145);
+            height: auto;
+          }
+        }
       }
     }
   }
@@ -52,8 +69,29 @@
 
 .toggle-sidebar {
   @include breakpoint-down(md) {
+    background: rgba($brand-light-grey, 0.85);
+    backdrop-filter: blur(0.5px);
     display: unset;
     width: 100%;
     left: 0;
+
+    .close-toggler {
+      @include transition(0.45s);
+      @include square-shape(38);
+      position: absolute;
+      right: toRem(15);
+      top: toRem(15);
+      background: rgba($brand-primary, 0.75);
+
+      .wrapper {
+        position: relative;
+
+        .icon-close {
+          @include center-placement;
+          font-size: toRem(27);
+          margin-top: toRem(-4);
+        }
+      }
+    }
   }
 }

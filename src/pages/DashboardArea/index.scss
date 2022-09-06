@@ -1,70 +1,144 @@
 @import "styles/variables.scss";
 
 .dashboard-area {
+  position: relative;
+  top: toRem(93);
+  padding: 0 toRem(3) toRem(40);
+
+  @include breakpoint-down(lg) {
+    top: toRem(86);
+  }
+
+  @include breakpoint-down(md) {
+    top: toRem(84);
+  }
+
   .title-text {
-    font-size: 16px;
-    line-height: 40px;
+    @include font-height(16, 40);
     font-weight: 500;
     margin-bottom: 10px;
     padding-left: 3px;
+
+    @include breakpoint-down(lg) {
+      @include font-height(15.5, 38);
+    }
+
+    @include breakpoint-down(md) {
+      @include font-height(14.75, 36);
+      margin-bottom: 8px;
+    }
   }
 
-  .overview-area {
-    @include flex-row-start-nowrap;
-    border: 1px solid #e5e8ed;
-    margin-bottom: 35px;
-    border-radius: 6px;
-    padding: 35px 4px;
-    width: max-content;
+  .wrapper-row {
+    @include breakpoint-down(sm) {
+      width: 100%;
+      overflow: auto;
 
-    .overview-card {
-      position: relative;
-      padding: 10px 32px;
-      width: 252px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
-      &:nth-of-type(2) {
-        border-left: 1px solid $brand-lighter-grey;
-        border-right: 1px solid $brand-lighter-grey;
+    .overview-area {
+      @include flex-row-start-nowrap;
+      border: 1px solid #e5e8ed;
+      margin-bottom: 35px;
+      border-radius: 6px;
+      padding: 35px 4px;
+      width: max-content;
+
+      @include breakpoint-down(lg) {
+        width: 100%;
+        overflow: auto;
+        padding: 32px 4px;
       }
 
-      .title-row {
-        @include flex-row-start-nowrap;
+      @include breakpoint-down(md) {
+        padding: 30px 4px;
+        margin-bottom: 30px;
+      }
 
-        .text {
-          color: $brand-black;
-          line-height: 30px;
-          font-weight: 700;
-          font-size: 18px;
-          margin-right: 17px;
+      @include breakpoint-down(sm) {
+        padding: 22px 4px;
+        width: max-content;
+      }
+
+      .overview-card {
+        position: relative;
+        padding: 10px 32px;
+        width: 252px;
+
+        @include breakpoint-down(lg) {
+          padding: 8px 30px;
         }
 
-        .indicator {
+        @include breakpoint-down(sm) {
+          padding: 8px 20px;
+          width: 180px;
+        }
+
+        &:nth-of-type(2) {
+          border-left: 1px solid $brand-lighter-grey;
+          border-right: 1px solid $brand-lighter-grey;
+        }
+
+        .title-row {
           @include flex-row-start-nowrap;
-          position: relative;
-          top: -3px;
 
-          .icon {
-            margin-right: 5px;
-            font-size: 13px;
+          .text {
+            @include font-height(18, 30);
+            color: $brand-black;
+            font-weight: 700;
+            margin-right: 17px;
+
+            @include breakpoint-down(lg) {
+              @include font-height(17, 28);
+            }
+
+            @include breakpoint-down(md) {
+              @include font-height(16.5, 26);
+            }
+
+            @include breakpoint-down(sm) {
+              @include font-height(16, 26);
+            }
           }
 
-          .indicator-text {
-            font-size: 12.5px;
+          .indicator {
+            @include flex-row-start-nowrap;
+            position: relative;
+            top: -3px;
+
+            .icon {
+              margin-right: 5px;
+              font-size: 13px;
+            }
+
+            .indicator-text {
+              font-size: 12.5px;
+            }
           }
         }
-      }
 
-      .meta {
-        line-height: 26px;
-        color: $brand-light-grey;
-        font-size: 14.75px;
-      }
+        .meta {
+          @include font-height(14.75, 26);
+          color: $brand-light-grey;
 
-      .backdrop {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+          @include breakpoint-down(lg) {
+            @include font-height(13.75, 24);
+          }
+
+          @include breakpoint-down(sm) {
+            @include font-height(13, 23);
+          }
+        }
+
+        .backdrop {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
   }
@@ -72,6 +146,15 @@
   .key-actions-area {
     @include flex-row-between-nowrap;
     margin-bottom: 35px;
+
+    @include breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint-down(sm) {
+      @include flex-row-between-wrap;
+      margin-bottom: 30px;
+    }
   }
 
   .load-more {
@@ -87,6 +170,11 @@
     &:hover {
       background: $brand-primary;
       color: $brand-white !important;
+    }
+
+    @include breakpoint-down(lg) {
+      padding: 14px 35px;
+      font-size: 14px;
     }
   }
 }
